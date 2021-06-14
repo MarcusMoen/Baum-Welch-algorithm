@@ -13,7 +13,7 @@ def forward_prob(A, B, O):
         for j in range(n): # Goes over all states
             result = 0
             for i in range(n):
-                result += alpha[t-1][i] * A[i][j] * B[i][O[t]] # Does the recursive step
+                result += alpha[t-1][i] * A[i][j] * B[j][O[t]] # Does the recursive step
             alpha[t][j] = result # Update the alpha matrix for each time t and state j
     return alpha
 
